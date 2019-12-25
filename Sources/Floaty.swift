@@ -438,6 +438,7 @@ open class Floaty: UIView {
    Items close.
    */
   @objc open func close() {
+    self.overlayView.sendSubviewToBack(self)
     if let shouldClose = fabDelegate?.floatyShouldClose?(self), shouldClose == false {
       return
     }
